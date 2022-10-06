@@ -1,0 +1,15 @@
+function conversor(n){
+    let minutos,horas,dias;
+
+        minutos= n / 60;
+
+        horas= minutos / 60;
+
+    
+        dias= horas / 24;
+
+
+            console.log( n + " estos segundos son: " + dias + " Dias, " + horas + " Horas, " + minutos + " minutos ");
+}
+
+conversor(86400);
