@@ -9,7 +9,7 @@ function conversor(n){
         dias= horas / 24;
 
 
-            console.log( n + " estos segundos son: " + dias + " Dias, " + horas + " Horas, " + minutos + " minutos ");
+            console.log( n + " estos segundos son: " + Math.trunc(dias) + " Dias, " + Math.trunc(horas) + " Horas, " + Math.trunc(minutos) + " minutos ");
 }
 
-conversor(86400);
+conversor(95300);
