@@ -12,4 +12,4 @@ function conversor(n){
             console.log( n + " estos segundos son: " + Math.trunc(dias) + " Dias, " + Math.trunc(horas) + " Horas, " + Math.trunc(minutos) + " minutos ");
 }
 
-conversor(95300);
+conversor(2700000);
