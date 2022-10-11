@@ -1,0 +1,15 @@
+const OddishVsEvenish = (n) => {
+
+  let cifra1 = n.toString();
+  let cifra2 = 0;
+  let resultado = "Evenish";
+
+    for (let i = 0; i < cifra1.length; i++) {
+        cifra2 += parseInt(cifra1[i]);
+    }
+    if (cifra2 % 2 === 1) {
+        resultado = "Oddish";
+    }  return resultado;
+}
+
+console.log(OddishVsEvenish(22));
