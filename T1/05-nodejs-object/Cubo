@@ -1,0 +1,8 @@
+const objeto ={ ancho: 2, largo: 2, alto: 2};
+
+function Cubo(objeto) {
+	const volumen = objeto.ancho * objeto.largo * objeto.alto;
+    return volumen;
+}
+
+console.log("El volumen es : "+ Cubo(objeto));

@@ -1,0 +1,8 @@
+const objeto ={ bien: 2, mal: 32};
+
+function BienYMal(objeto) {
+	const restar = objeto.bien - objeto.mal;
+    return restar;
+}
+
+console.log(BienYMal(objeto));
