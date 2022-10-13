@@ -1,0 +1,8 @@
+const obj = { a: 'Espana', b: 'RealBetis', c: 'WOW' };
+function invertir(obj) {
+  const array = Object.entries(obj);
+   const retroceso = array.map( ([key,obj]) => [obj,key] );
+ return Object.fromEntries(retroceso);
+}
+
+console.log(invertir(obj));

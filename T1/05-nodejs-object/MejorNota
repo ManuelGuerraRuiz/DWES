@@ -1,0 +1,13 @@
+const alumnos = ([
+    { "nombre": "Carlos", "notas": [1, 2, 3] },
+    { "nombre": "Andrea", "notas": [10, 8, 9] },
+    { "nombre": "Manuel", "notas": [5, 6, 9] }
+  ]);
+
+function NotaTop(alumnos) {
+    return alumnos.map(({ nombre, notas }) => ( 
+        { nombre, notaTop: Math.max(0, ...notas) }
+    ));
+}
+
+console.log(NotaTop(alumnos));

@@ -1,0 +1,6 @@
+const objeto = {nombre: 'manuel', apellido: 'Guerra'};
+function ToArray(objeto){
+  console.log(Object.entries(objeto));
+} 
+
+ToArray(objeto);
