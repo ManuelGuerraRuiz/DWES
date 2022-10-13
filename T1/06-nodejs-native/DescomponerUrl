@@ -1,0 +1,8 @@
+function descomponer(enlace){
+    const url = new URL(enlace);
+
+    const objeto = { Protocol: url.protocol,Hostname: url.hostname, PathName: url.pathname }
+        console.log(objeto);
+}
+
+descomponer('https://github.com/ManuelGuerraRuiz/DWES/tree/main/T1/05-nodejs-object');
