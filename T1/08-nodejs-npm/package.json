@@ -1,0 +1,19 @@
+{
+  "name": "my-first.little-project",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manuel",
+  "license": "MIT",
+  "dependencies": {
+    "casual": "^1.6.2",
+    "chalk": "^5.1.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
