@@ -12,3 +12,20 @@ const alakazam = fetch("https://pokeapi.co/api/v2/pokemon/alakazam");
             })
         });
     });*/
+      
+    const responses = await Promise.all([machamp, golem, alakazam])
+
+    const array = responses.map(async r =>{
+        const pokemon =  await r.json();
+        return pokemon.name;
+
+    });
+
+    const resultado = await Promise.all(array);
+
+    console.log(resultado);
+    
+
+  
+    
+      
