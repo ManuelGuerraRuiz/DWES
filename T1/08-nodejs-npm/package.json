@@ -11,7 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "casual": "^1.6.2",
-    "chalk": "^5.1.2"
+    "chalk": "^5.1.2",
+    "luxon": "^3.0.4"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0"
