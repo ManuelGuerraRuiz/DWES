@@ -1,7 +1,7 @@
 {
      "version": "0.2.0",
      "configurations": [
-     { // Configuración para arrancar la aplicación sin importar donde  se está
+     { // Configuración para arrancar la aplicación sin importar donde está
      "type": "node",
     "request": "launch",
      "name": "Launch API",
@@ -9,7 +9,7 @@
      "skipFiles": [
      "<node_internals>/**"
      ],
-     "program": "${workspaceFolder}/src/index.js",
+     "program": "${workspaceFolder}/index.js",
      "cwd": "${workspaceFolder}"
      
     },

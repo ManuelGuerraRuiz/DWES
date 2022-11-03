@@ -1,0 +1,1 @@
+import fizzbuz from "./script/fizzbuzz";

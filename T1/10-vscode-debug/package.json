@@ -1,0 +1,12 @@
+{
+  "name": "10-vscode-debug",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "DESARROLLO WEB ENTORNO SERVIDOR \r -vscode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
