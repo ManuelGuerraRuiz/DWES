@@ -1,3 +1,3 @@
 # DWES
 DESARROLLO WEB ENTORNO SERVIDOR 
--Scripts 
+-vscode

@@ -5,7 +5,7 @@ const rl = readline.createInterface({
     output:process.stdout
 });
 
-rl.question('Bienvenido al menu\n1.Crear Nota\n2.Editar Nota\n3.Borrar Nota\n4.Salir\nSeleccione una opcion: ', (opcion) =>{
+    let opcion = process.argv[2];
     if(opcion == '1' || opcion == '2' || opcion == '3' || opcion == '4'){
         switch(opcion){
             case '1':
@@ -79,4 +79,4 @@ rl.question('Bienvenido al menu\n1.Crear Nota\n2.Editar Nota\n3.Borrar Nota\n4.S
                 rl.close();
         }
     }
-});
+;

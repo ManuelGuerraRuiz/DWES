@@ -4,7 +4,12 @@
   "description": "Proyecto npm del primer trimestre",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "crear": "node menu.js 1",
+    "editar": "node menu.js 2",
+    "borra": "node menu.js 3",
+    "salir": "node menu.js 4"
+
   },
   "author": "Manuel Guerra Ruiz",
   "license": "ISC"

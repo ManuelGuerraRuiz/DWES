@@ -1,0 +1,24 @@
+{
+     "version": "0.2.0",
+     "configurations": [
+     { // Configuración para arrancar la aplicación sin importar donde  se está
+     "type": "node",
+    "request": "launch",
+     "name": "Launch API",
+     "outputCapture": "std",
+     "skipFiles": [
+     "<node_internals>/**"
+     ],
+     "program": "${workspaceFolder}/src/index.js",
+     "cwd": "${workspaceFolder}"
+     
+    },
+        { // Configuración base para ejecutar el archivo abierto en el editor
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Current Opened File",
+            "outputCapture": "std",
+            "program": "${file}"
+        }
+    ]
+ }

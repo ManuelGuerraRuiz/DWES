@@ -1,0 +1,24 @@
+{
+  "name": "09-npm-script",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Ejercicio 09 de script",
+  "main": "fecha.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "date":"node fecha.js",
+    "crear":"mkdir files",
+    "crear:js":"node ficherito.js",
+    "crear:carpeta":"cd files && mkdir",
+    "borrar": "rmdir /S files",
+    "borrar:js":"cd files && del *.js",
+    "imprimir:azul":"node azul.js",
+    "imprimir:rojo":"node rojo.js",
+    "imprimir:verde":"node verde.js"
+  },
+  "author": "Manuel Guerra Ruiz",
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^3.1.0"
+  }
+}
