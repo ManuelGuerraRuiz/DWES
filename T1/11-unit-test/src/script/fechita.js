@@ -1,28 +1,19 @@
-import { DateTime } from "luxon";
+function dateCompare(dateStr1, dateStr2) {
+  const date1 = new Date(dateStr1);
+  const date2 = dateStr2 ? new Date(dateStr2) : new Date();
 
-function fechita(fecha1, fecha2) {
-  let fechaActual = DateTime.now().toFormat("dd/MM/yyyy");
-
-  if (fecha1 < fecha2) {
-    let fecha = {
-      fechaInicio: fecha1,
-      fechaFinal: fecha2,
-    };
-    return console.log(fecha);
-  } else if (fecha1 > fecha2) {
-    let fecha = {
-      fechaInicio: fecha2,
-      fechaFinal: fecha1,
-    };
-    return console.log(fecha);
-  } else if (fecha1 == fecha2) {
-    return console.log("Las fechas son iguales");
-  } else if (fecha2 == null) {
-    if (fecha2 > fechaActual) {
-      return console.log(fecha1, fechaActual);
-    } else {
-      return console.log(fechaActual, fecha1);
-    }
+  if(date1 <= date2) {
+      const fecha = {
+          startDate: dateStr1,
+          endDate: date2.toISOString(),
+      }
+      return fecha;
+  }else if (date1 > date2) {
+      const fecha = {
+          startDate: date2.toISOString(),
+          endDate: dateStr1
+      }
+      return fecha;
   }
 }
-fechita("19/11/2022");
+export default dateCompare;
