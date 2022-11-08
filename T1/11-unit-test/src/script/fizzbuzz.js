@@ -1,10 +1,8 @@
-function fizzbuz(n){
-    let result = '';
-     if(n%3 === 0) result += 'fizz';
-     if(n%5 === 0) result += 'buzz';
-     if(n%15 === 0) result += 'fizzbuzz';
-    
-     return result || n;
+function fizzBuzz(n){
+    if (n % 15 === 0) return "fizzbuzz";
+    if(n % 3 === 0) return "fizz";
+    if(n % 5 === 0) return "buzz";
+    return n;
 }
 
-export default fizzbuz;
+export default fizzBuzz;

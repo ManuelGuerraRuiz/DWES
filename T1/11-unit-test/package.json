@@ -8,11 +8,22 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "compose:test": "docker-compose -f docker-compose.test.yml up -d",
+      "test": "cross-env NODE_ENV=test nyc ava",
+      "test:html": "cross-env NODE_ENV=test nyc --reporter=html ava",
+      "test:watch": "cross-env NODE_ENV=test ava --watch --verbose",
+      "test:report": "nyc --reporter=html ava",
+      "test:purge": "rm -r .nyc_output .scannerwork coverage"
   },
   "author": "Manuel Guerra Ruiz",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^5.0.1"
+    "ava": "^5.0.1",
+    "sonarqube-scanner": "^2.8.2"
+  },
+  "ava": {
+    "files": [
+      "test/**/*test.js"
+    ]
   }
 }
