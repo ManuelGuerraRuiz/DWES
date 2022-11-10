@@ -7,6 +7,8 @@ const rl = readline.createInterface({
 
 const fs = require('fs');
 
+const files = fs.readdirSync('./');
+
 const opcion = process.argv[2];
 if (opcion === '1' || opcion === '2' || opcion === '3' || opcion === '4') {
   // eslint-disable-next-line default-case
@@ -28,8 +30,6 @@ if (opcion === '1' || opcion === '2' || opcion === '3' || opcion === '4') {
     case '2':
       console.log('Muestro todas las notas:');
 
-      const files = fs.readdirSync('./');
-
       console.log(files);
 
       rl.question('Escriba  el archivo que quieras editar: ', archivo => {
@@ -39,7 +39,7 @@ if (opcion === '1' || opcion === '2' || opcion === '3' || opcion === '4') {
           const data = fs.readFileSync(archivo, 'utf8');
           console.log(`${data}\n\n`);
         } catch (err) {
-          err = 'NO EXISTE EL ARCHIVO';
+          err.mensaje = 'NO EXISTE EL ARCHIVO';
           console.error(err);
         }
 
@@ -56,8 +56,6 @@ if (opcion === '1' || opcion === '2' || opcion === '3' || opcion === '4') {
       break;
     case '3':
       console.log('Muestro todas las notas:');
-
-      const files = fs.readdirSync('./');
 
       console.log(files);
 
