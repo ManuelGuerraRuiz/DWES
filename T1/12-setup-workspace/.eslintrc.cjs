@@ -11,5 +11,11 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
+    'arrow-parens': [
+      'error',
+      'as-needed',
+    ],
+    'no-underscore-dangle': ['error', { allow: ['_id'] }],
+    'no-unused-vars': ['warn', { argsIgnorePattern: 'next' }],
   },
 };

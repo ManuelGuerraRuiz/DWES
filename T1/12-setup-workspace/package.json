@@ -1,18 +1,24 @@
 {
   "name": "12-setup-workspace",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "description": "DESARROLLO WEB ENTORNO SERVIDOR \r -Scripts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore ."
   },
   "author": "Manuel Guerra",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.27.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-ava": "^13.2.0",
     "eslint-plugin-import": "^2.26.0",
     "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "chalk": "^5.1.2"
   }
 }
