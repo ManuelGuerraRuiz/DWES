@@ -1,82 +1,77 @@
 const readline = require('readline');
 
 const rl = readline.createInterface({
-    input:process.stdin,
-    output:process.stdout
+  input: process.stdin,
+  output: process.stdout,
 });
 
-    let opcion = process.argv[2];
-    if(opcion == '1' || opcion == '2' || opcion == '3' || opcion == '4'){
-        switch(opcion){
-            case '1':
-                console.log('Creando Nota');
+const fs = require('fs');
 
-            rl.question('Nombre del nuevo archivo: ', function (nombre){
+const opcion = process.argv[2];
+if (opcion === '1' || opcion === '2' || opcion === '3' || opcion === '4') {
+  // eslint-disable-next-line default-case
+  switch (opcion) {
+    case '1':
+      console.log('Creando Nota');
 
-                rl.question('Contenido del archivo: ', function (textito){
+      rl.question('Nombre del nuevo archivo: ', nombre => {
+        rl.question('Contenido del archivo: ', textito => {
+          fs.writeFile(`${nombre}.note`, textito, err => {
+            if (err) throw err;
+            console.log('Se ha creado correctamente');
+          });
 
-                    var fs = require('fs');
+          rl.close();
+        });
+      });
+      break;
+    case '2':
+      console.log('Muestro todas las notas:');
 
-                        fs.writeFile(nombre +'.note', textito, function (err) {
-                        if (err) throw err;
-                        console.log('Se ha creado correctamente');
-                    });
+      const files = fs.readdirSync('./');
 
-                    rl.close();
-                });
-            });
-                break;
-            case '2':
-                console.log("Muestro todas las notas:");
-                var fs = require('fs');
+      console.log(files);
 
-                var files = fs.readdirSync("./");
+      rl.question('Escriba  el archivo que quieras editar: ', archivo => {
+        console.log('Contenido del archivo\n');
 
-                console.log(files);
-
-                rl.question('Escriba  el archivo que quieras editar: ', function (archivo) {
-                    console.log('Contenido del archivo\n');
-
-                    try {
-                        const data = fs.readFileSync(archivo, 'utf8')
-                        console.log(data+'\n\n')
-                    } catch (err) {
-                        err = 'NO EXISTE EL ARCHIVO'
-                        console.error(err);
-                    }
-
-                    rl.question('Escriba lo que quieres editar: ', function (editado){
-        
-                        fs.writeFile(archivo, editado, function (err) {
-                            if (err) throw err;
-                            console.log('Archivo Editado Con Exito ');
-                        });;
-        
-                        rl.close();
-                    });
-                });
-
-                break;
-            case '3':
-                console.log("Muestro todas las notas:");
-                var fs = require('fs');
-
-                var files = fs.readdirSync("./");
-
-                console.log(files);
-
-                rl.question('Elija el archivo que quieras borrar: ', function(borrar){
-                    fs.unlink(borrar, function (err) {
-                    if (err) throw err;
-                    console.log('Archivo borrado');
-
-                    rl.close();
-                    });
-                });
-                
-                break;
-            case '4':
-                rl.close();
+        try {
+          const data = fs.readFileSync(archivo, 'utf8');
+          console.log(`${data}\n\n`);
+        } catch (err) {
+          err = 'NO EXISTE EL ARCHIVO';
+          console.error(err);
         }
-    }
-;
+
+        rl.question('Escriba lo que quieres editar: ', editado => {
+          fs.writeFile(archivo, editado, err => {
+            if (err) throw err;
+            console.log('Archivo Editado Con Exito ');
+          });
+
+          rl.close();
+        });
+      });
+
+      break;
+    case '3':
+      console.log('Muestro todas las notas:');
+
+      const files = fs.readdirSync('./');
+
+      console.log(files);
+
+      rl.question('Elija el archivo que quieras borrar: ', borrar => {
+        fs.unlink(borrar, err => {
+          if (err) throw err;
+          console.log('Archivo borrado');
+
+          rl.close();
+        });
+      });
+
+      break;
+    case '4':
+      rl.close();
+  }
+}
