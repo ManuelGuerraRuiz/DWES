@@ -1,0 +1,17 @@
+{
+  "name": "14-express",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "DESARROLLO WEB ENTORNO SERVIDOR \r -Express",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manuel Guerra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
