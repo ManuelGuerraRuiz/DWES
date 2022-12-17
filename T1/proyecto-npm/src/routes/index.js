@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.post('/', rootController);
 router.use('/notas', notasRouter);
-router.get('/notas', showNotes);
+//router.get('/notas', showNotes);
 
 module.exports = router;
