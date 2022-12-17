@@ -14,7 +14,6 @@ function deleteNote(name){
     });
 }
 
-  
 module.exports = {
     createNote,
     editeNote,

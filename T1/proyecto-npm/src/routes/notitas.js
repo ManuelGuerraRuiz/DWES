@@ -1,11 +1,10 @@
-const { application } = require('express');
 const express = require('express');
 
-const { createNote, editeNote, deleteNote } = require('../controllers/notitas');
+const { createNote, editeNote, deleteNote, showNotes } = require('../controllers/notitas');
 
 const router = express.Router();
 
-//router.get('/', showNote);
+router.get('/', showNotes);
 router.post('/', createNote);
 router.put('/:name', editeNote);
 router.delete('/:name', deleteNote);
