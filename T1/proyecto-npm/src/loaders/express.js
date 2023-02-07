@@ -1,5 +1,5 @@
 const express = require('express');
-const swaggerSpec = require('../openapi/swagger.json');
+const swaggerSpec = require('../openapi');
 const routes = require('../routes');
 const swaggerUI = require('swagger-ui-express');
 
