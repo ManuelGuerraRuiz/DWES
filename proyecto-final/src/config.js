@@ -14,13 +14,16 @@ const app = {
     accessToken: process.env.GMAIL_ACCESS_TOKEN,
     authUrl: 'https://developers.google.com/oauthplayground',
   };
+
+  const mongodb = { 
+    user: process.env.DATABASE_USER , 
+    pass: process.env.DATABASE_PASS, 
+  
+  }
   
   module.exports = {
     port,
     app,
     smtp,
-    notes: {
-      folder: 'files',
-      ext: 'note',
-    },
+    mongodb,
   };
