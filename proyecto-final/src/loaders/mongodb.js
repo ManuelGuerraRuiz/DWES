@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 module.exports = async config => {
-    const{ user, pass} = config;
-    await mongoose.connect('mongodb+srv://mgr:manolito99@cluster0.w1mahhd.mongodb.net/?retryWrites=true&w=majority',user,pass);
+    const{ user, pass, host, port, dbName} = config;
+    await mongoose.connect(`mongodb+srv://${user}:${pass}@${host}${port ? `:${port}`:''}/${dbName}?retryWrites=true&w=majority`);
     console.log('Conectado correctamente');
 
 }
