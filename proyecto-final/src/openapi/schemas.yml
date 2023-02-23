@@ -34,3 +34,54 @@ Email:
       type: string
     text:
       type: string
+User:
+  type: object
+  properties:
+    email:
+      type: string
+    pass:
+      type: string
+    name:
+      type: string
+    apellido:
+      type: string
+editUser:
+  type: object
+  properties:
+    email:
+      type: string
+    pass:
+      type: string
+    name:
+      type: string
+    apellido:
+      type: string      
+deleteUser:
+  type: object
+  properties:
+    email:
+      type: string    
+Ordenador:
+  type: object
+  properties:
+    id:
+      type: number
+    categoria:
+      type: string
+    precio:
+      type: number  
+    name:
+      type: string
+    componentes:
+      type: array
+    foto:
+      type: string
+Factura:
+  type: object
+  properties:
+    fecha:
+      type: number
+    pago:
+      type: number
+    refUser:
+      type: number                 

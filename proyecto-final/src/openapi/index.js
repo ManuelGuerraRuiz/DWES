@@ -11,7 +11,7 @@ module.exports = {
   openapi: '3.0.3',
   info: {
     version: '0.0.1',
-    title: 'Mi editor API',
+    title: 'CUSTOM-PC',
     description: 'RESTFull API for editor notes',
     termsOfService: 'http://swagger.io/terms/',
   },

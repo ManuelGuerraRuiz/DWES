@@ -94,4 +94,106 @@
             content:
               application/json:
                 schema:
-                  $ref: "#/components/schemas/Email"          
+                  $ref: "#/components/schemas/Email"
+  "/user":
+    post:
+      tags:
+      - Usuarios
+      summary: 'Crear Usuario '
+      description: Enviar los datos para crear un usuario
+      requestBody:
+        description: Crear usuario
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        201:
+          description: Usuario creado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+  "/user/{email}":                          
+    put:
+      tags:
+      - Usuarios
+      summary: 'Editar Usuario '
+      description: Enviar los datos para Editar un usuario
+      parameters:
+      - name: email
+        in: path
+        description: Pon el nombre del email para Editar
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Editar  usuario
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/editUser"
+      responses:
+        201:
+          description: Usuario editado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+    delete:
+      tags:
+      - Usuarios
+      summary: 'Borrar Usuario '
+      description: Enviar los datos para Borrar un usuario
+      parameters:
+      - name: email
+        in: path
+        description: Pon el nombre del email para borrar
+        required: true
+        schema:
+          type: string
+      responses:
+        201:
+          description: Usuario borrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"                                                             
+  "/ordenador":
+    post:
+      tags:
+      - Ordenadores
+      summary: 'Crear Ordenadores '
+      description: Enviar los datos para crear un ordenador
+      requestBody:
+        description: Crear ordenador
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Ordenador"
+      responses:
+        201:
+          description: Ordenador creado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Ordenador"
+  "/factura":
+    post:
+      tags:
+      - Facturas
+      summary: 'Crear Factura '
+      description: Enviar los datos para crear una factura
+      requestBody:
+        description: Crear factura
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Factura"
+      responses:
+        201:
+          description: Factura creada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Factura"

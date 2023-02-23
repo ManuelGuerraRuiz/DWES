@@ -6,8 +6,8 @@ const { Schema,model } = require("mongoose");
        categoria : String,
        precio : Number,
        name : String,
-       componente : String,
+       componentes : Array,
        foto : String,
       });
 
-module.exports = model('Ordenador',ordenadorSchema);
+module.exports = model('Ordenadores',ordenadorSchema);
