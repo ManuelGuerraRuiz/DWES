@@ -1,5 +1,8 @@
 const { User } = require('../../models');
 
+function getAllUsers(filters) {
+  return User.find(filters);
+}
 
 async function findAllUsers(filters){
     return User.find(filters);
@@ -45,4 +48,6 @@ module.exports = {
     createUser,
     deleteUser,
     editUser,
+    getAllUsers,
+     
 }

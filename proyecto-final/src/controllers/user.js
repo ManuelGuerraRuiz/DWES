@@ -1,7 +1,16 @@
 const userService = require('../services/mongodb-service/user');
 const { logger } = require('../utils');
 
-
+async function getUsers(req, res, next) {
+  try {
+    const users = await userService.getAllUsers();
+    logger.info('Usuarios mostrados');
+    return res.status(201).send(users);
+  } catch (error) {
+    logger.error('Usuarios no encontrados');
+    return next(error);
+  }
+}
 
 async function createUser(req, res, next) {
     try {
@@ -41,5 +50,6 @@ async function createUser(req, res, next) {
 module.exports = {
     createUser,
     deleteUser,
-    editUser,  
+    editUser, 
+    getUsers, 
 }; 

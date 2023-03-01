@@ -1,32 +1,3 @@
-Notes:
-  type: object
-  properties:
-    name:
-      type: string
-    content:
-      type: string
-      format: int64
-PostNotes:
-  type: object
-  properties:
-    name:
-      type: string
-    content:
-        type: string
-        format: int64
-PutNote:
-  type: object
-  properties:
-    name:
-      type: string
-    content:
-        type: string
-        format: int64
-DeleteNote:
-  type: object
-  properties:
-    name:
-      type: string
 Email:
   type: object
   properties:
@@ -35,6 +6,17 @@ Email:
     text:
       type: string
 User:
+  type: object
+  properties:
+    email:
+      type: string
+    pass:
+      type: string
+    name:
+      type: string
+    apellido:
+      type: string     
+createUser:
   type: object
   properties:
     email:
@@ -60,11 +42,22 @@ deleteUser:
   type: object
   properties:
     email:
-      type: string    
+      type: string
 Ordenador:
   type: object
   properties:
-    id:
+    referencia:
+      type: number
+    categoria:
+      type: string
+    precio:
+      type: number  
+    name:
+      type: string  
+createOrdenador:
+  type: object
+  properties:
+    referencia:
       type: number
     categoria:
       type: string
@@ -72,10 +65,10 @@ Ordenador:
       type: number  
     name:
       type: string
-    componentes:
+    componente:
       type: array
-    foto:
-      type: string
+      items:
+        type: string  
 Factura:
   type: object
   properties:

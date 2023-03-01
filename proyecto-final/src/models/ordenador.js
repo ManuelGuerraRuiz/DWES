@@ -1,13 +1,11 @@
-const { Schema,model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 
+const ordenadorSchema = new Schema({
+  referencia: { type: Number, require: true, unique: true },
+  categoria: { type: String, enum: ['gaming', 'basic', 'profesional'], required: true },
+  precio: Number,
+  name: String,
+  componentes: [String],
+});
 
-    const ordenadorSchema = new Schema({
-       id : {type: Number,require,unique : true},
-       categoria : String,
-       precio : Number,
-       name : String,
-       componentes : Array,
-       foto : String,
-      });
-
-module.exports = model('Ordenadores',ordenadorSchema);
+module.exports = model("Ordenadores", ordenadorSchema);

@@ -1,81 +1,3 @@
-  "/notas":
-    get:
-      tags:
-      - Notas
-      summary: Recoger todas las notas
-      description: Recoger las notas que están almacenadas
-      responses:
-        200:
-          description: Lista de notas
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Notes"
-    post:
-      tags:
-      - Notas
-      summary: 'Crear nota '
-      description: Enviar los datos para crear una nota que sera almacenada
-      requestBody:
-        description: Crear nota
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/PostNotes"
-      responses:
-        201:
-          description: Nota creada
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Notes"
-  "/notas/{name}":
-    put:
-      tags:
-      - Notas
-      summary: Editar nota específica
-      description: 'Enviar los datos para editar una nota ya creada '
-      parameters:
-      - name: name
-        in: path
-        description: Pon el nombre de la nota
-        required: true
-        schema:
-          type: string
-      requestBody:
-        description: Body to edit a note
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/PutNote"
-      responses:
-        201:
-          description: Nota editada correctamente
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Notes"
-    delete:
-      tags:
-      - Notas
-      summary: Eliminar nota específica
-      description: Eliminar las notas
-      parameters:
-      - name: name
-        in: path
-        description: Pon el nombre de la nota
-        required: true
-        schema:
-          type: string
-      responses:
-        201:
-          description: Nota Eliminada
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/DeleteNote"
   "/mail":
     post:
       tags:
@@ -96,6 +18,20 @@
                 schema:
                   $ref: "#/components/schemas/Email"
   "/user":
+    get:
+      tags:
+      - Usuarios
+      summary: Recoger todos los usuarios
+      description: Recoger todos los usuarios
+      responses:
+        200:
+          description: Lista de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
     post:
       tags:
       - Usuarios
@@ -160,6 +96,20 @@
               schema:
                 $ref: "#/components/schemas/User"                                                             
   "/ordenador":
+    get:
+      tags:
+      - Ordenadores
+      summary: Recoger todos los Ordenadores
+      description: Recoger todos los Ordenadores
+      responses:
+        200:
+          description: Lista de Ordenadores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Ordenador"  
     post:
       tags:
       - Ordenadores
@@ -170,14 +120,14 @@
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Ordenador"
+              $ref: "#/components/schemas/createOrdenador"
       responses:
         201:
           description: Ordenador creado
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Ordenador"
+                $ref: "#/components/schemas/createOrdenador"
   "/factura":
     post:
       tags:

@@ -7,8 +7,7 @@ const componenteSchema = new Schema({
     categoria : String,
     precio : Number,
     name : String,
-    componentes : Array,
-    foto : String,
+    componentes : Array
 });
 
 const Componente = model('Componentes', componenteSchema);
@@ -17,9 +16,11 @@ const placaBaseSchema = new Schema({}, options);
 const PlacaBase = Componente.discriminator('PlacaBase', placaBaseSchema);
 
 const procesadorSchema = new Schema({}, options);
-const procesador = Componente.discriminator('Procesador', procesadorSchema);
+const Procesador = Componente.discriminator('Procesador', procesadorSchema);
 
 module.exports = {
     Componente,
     PlacaBase,
+    Procesador,
+    
 }
