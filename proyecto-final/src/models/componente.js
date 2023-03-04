@@ -21,16 +21,24 @@ const procesadorSchema = new Schema({
 }, options);
 const Procesador = Componente.discriminator('Procesador', procesadorSchema);
 
-const ramSchema = new Schema({}, options);
+const ramSchema = new Schema({
+    gb: String
+}, options);
 const Ram = Componente.discriminator('Ram', ramSchema);
 
-const graficaSchema = new Schema({}, options);
+const graficaSchema = new Schema({
+    gb: String
+}, options);
 const Grafica = Componente.discriminator('Grafica', graficaSchema);
 
-const refrigeracionSchema = new Schema({}, options);
+const refrigeracionSchema = new Schema({
+    tipo: String, enum: ['aire', 'liquida']
+}, options);
 const Refrigeracion = Componente.discriminator('Refrigeracion', refrigeracionSchema);
 
-const discoDuroSchema = new Schema({}, options);
+const discoDuroSchema = new Schema({
+    capacidad : String
+}, options);
 const DiscoDuro = Componente.discriminator('DiscoDuro', discoDuroSchema);
 
 module.exports = {

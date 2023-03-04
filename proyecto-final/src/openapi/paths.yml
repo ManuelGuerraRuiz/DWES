@@ -302,4 +302,81 @@
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/createProcesador"                                                          
+                $ref: "#/components/schemas/createProcesador"
+  "/componente/ram":              
+    post:
+      tags:
+      - Componentes
+      summary: 'Crear Ram'
+      description: Enviar los datos para crear una Ram
+      requestBody:
+        description: Crear Ram
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createRam"
+      responses:
+        201:
+          description: Ram creada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createRam"
+  "/componente/grafica":              
+    post:
+      tags:
+      - Componentes
+      summary: 'Crear Grafica'
+      description: Enviar los datos para crear una Grafica
+      requestBody:
+        description: Crear Grafica
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createGrafica"
+      responses:
+        201:
+          description: Grafica creada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createGrafica"
+  "/componente/refrigeracion":              
+    post:
+      tags:
+      - Componentes
+      summary: 'Crear Refrigeracion'
+      description: Enviar los datos para crear una Refrigeracion
+      requestBody:
+        description: Crear Refrigeracion
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createRefrigeracion"
+      responses:
+        201:
+          description: Refrigeracion creada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createRefrigeracion"
+  "/componente/discoduro":              
+    post:
+      tags:
+      - Componentes
+      summary: 'Crear Disco Duro'
+      description: Enviar los datos para crear un Disco duro
+      requestBody:
+        description: Crear Disco duro
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createDiscoDuro"
+      responses:
+        201:
+          description: Disco Duro creado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createDiscoDuro"                
+

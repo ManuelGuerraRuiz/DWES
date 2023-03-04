@@ -57,8 +57,7 @@ Ordenador:
     componentes:
       type: array
       items:
-        type: string
-    
+        type: string    
 createOrdenador:
   type: object
   properties:
@@ -166,4 +165,48 @@ createProcesador:
     name:
       type: string
     ghz:
-      type: string                                         
+      type: string
+createRam:
+  type: object
+  properties:
+    referencia:
+      type: number
+    precio:
+      type: number
+    name:
+      type: string
+    gb:
+      type: string
+createGrafica:
+  type: object
+  properties:
+    referencia:
+      type: number
+    precio:
+      type: number
+    name:
+      type: string
+    gb:
+      type: string
+createRefrigeracion:
+  type: object
+  properties:
+    referencia:
+      type: number
+    precio:
+      type: number
+    name:
+      type: string
+    tipo:
+      type: string
+createDiscoDuro:
+  type: object
+  properties:
+    referencia:
+      type: number
+    precio:
+      type: number
+    name:
+      type: string
+    capacidad:
+      type: string              
