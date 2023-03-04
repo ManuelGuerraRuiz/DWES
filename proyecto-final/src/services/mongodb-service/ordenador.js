@@ -1,7 +1,7 @@
 const { Ordenador } = require("../../models");
 
 function getAllOrdenadores(filters) {
-  return Ordenador.find(filters);
+  return Ordenador.find(filters).populate('componentes');
 }
 
 async function findAllOrdenadores(filters) {

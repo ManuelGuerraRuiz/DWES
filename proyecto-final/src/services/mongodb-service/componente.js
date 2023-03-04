@@ -1,16 +1,25 @@
-const { Componente, PlacaBase, Procesador } = require("../../models/componente");
+const {
+  Componente,
+  PlacaBase,
+  Procesador,
+} = require("../../models/componente");
 
 async function createPlacaBase(body) {
-    const createdPlacaBase = await new PlacaBase(body).save();
-    return createdPlacaBase;
-  }
+  const createdPlacaBase = await new PlacaBase(body).save();
+  return createdPlacaBase;
+}
 
-  function getAllComponentes(filters) {
-    return Componente.find(filters)
-  }  
+async function createProcesador(body) {
+  const createdProcesador = await new Procesador(body).save();
+  return createdProcesador;
+}
 
-  module.exports = {
-    createPlacaBase,
-    getAllComponentes
-  };
-  
+function getAllComponentes(filters) {
+  return Componente.find(filters);
+}
+
+module.exports = {
+  createPlacaBase,
+  createProcesador,
+  getAllComponentes,
+};

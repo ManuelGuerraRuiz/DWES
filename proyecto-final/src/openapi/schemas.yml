@@ -53,7 +53,12 @@ Ordenador:
     precio:
       type: number  
     name:
-      type: string  
+      type: string
+    componentes:
+      type: array
+      items:
+        type: string
+    
 createOrdenador:
   type: object
   properties:
@@ -65,10 +70,10 @@ createOrdenador:
       type: number  
     name:
       type: string
-    componente:
+    componentes:
       type: array
       items:
-        type: string 
+        type: string
 editOrdenador:
   type: object
   properties:
@@ -80,10 +85,8 @@ editOrdenador:
       type: number  
     name:
       type: string
-    componente:
-      type: array
-      items:
-        type: string
+    componentes:
+      type: string 
 deleteOrdenador:
   type: object
   properties:
@@ -152,4 +155,15 @@ createPlacabase:
     name:
       type: string
     tamano:
-      type: string                                  
+      type: string
+createProcesador:
+  type: object
+  properties:
+    referencia:
+      type: number
+    precio:
+      type: number
+    name:
+      type: string
+    ghz:
+      type: string                                         

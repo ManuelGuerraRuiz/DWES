@@ -13,6 +13,17 @@ async function createPlacaBase(req, res, next) {
     }
 }
 
+async function createProcesador(req, res, next) {
+    try {
+      const createdProcesador = await componenteService.createProcesador(req.body)
+      res.status(201).send(createdProcesador);
+      logger.info('Procesador creado');
+    } catch (error) {
+      error.status = 409;
+      next(error);
+    }
+}
+
 async function getComponentes(req, res, next) {
     try {
       const componentes = await componenteService.getAllComponentes();
@@ -26,5 +37,6 @@ async function getComponentes(req, res, next) {
 
   module.exports = {
     createPlacaBase,
+    createProcesador,
     getComponentes, 
 }; 

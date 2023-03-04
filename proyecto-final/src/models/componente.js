@@ -9,14 +9,16 @@ const componenteSchema = new Schema({
 
 });
 
-const Componente = model('Componente', componenteSchema);
+const Componente = model('Componentes', componenteSchema);
 
 const placaBaseSchema = new Schema({
     tamano : String
 }, options);
 const PlacaBase = Componente.discriminator("PlacaBase", placaBaseSchema);
 
-const procesadorSchema = new Schema({}, options);
+const procesadorSchema = new Schema({
+    ghz : String
+}, options);
 const Procesador = Componente.discriminator('Procesador', procesadorSchema);
 
 const ramSchema = new Schema({}, options);

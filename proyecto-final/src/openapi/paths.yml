@@ -283,4 +283,23 @@
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/createPlacabase"                                          
+                $ref: "#/components/schemas/createPlacabase"
+  "/componente/procesador":              
+    post:
+      tags:
+      - Componentes
+      summary: 'Crear Procesador'
+      description: Enviar los datos para crear un Procesador
+      requestBody:
+        description: Crear Procesador
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createProcesador"
+      responses:
+        201:
+          description: Procesador creado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createProcesador"                                                          
