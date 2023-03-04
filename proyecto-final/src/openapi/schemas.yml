@@ -68,13 +68,88 @@ createOrdenador:
     componente:
       type: array
       items:
-        type: string  
+        type: string 
+editOrdenador:
+  type: object
+  properties:
+    referencia:
+      type: number
+    categoria:
+      type: string
+    precio:
+      type: number  
+    name:
+      type: string
+    componente:
+      type: array
+      items:
+        type: string
+deleteOrdenador:
+  type: object
+  properties:
+    referencia:
+      type: number                
 Factura:
   type: object
   properties:
-    fecha:
+    referencia:
       type: number
+    fecha:
+      type: string
     pago:
       type: number
-    refUser:
-      type: number                 
+    user:
+      type: string
+    ordenador:
+      type: string
+createFactura:
+  type: object
+  properties:
+    referencia:
+      type: number
+    fecha:
+      type: string
+    pago:
+      type: number
+    user:
+      type: string
+    ordenador:
+      type: string
+editFactura:
+  type: object
+  properties:
+    referencia:
+      type: number
+    fecha:
+      type: string
+    pago:
+      type: number
+    user:
+      type: string
+    ordenador:
+      type: string 
+deleteFactura:
+  type: object
+  properties:
+    referencia:
+      type: number
+Componentes:
+  type: object
+  properties:
+    referencia:
+      type: number
+    precio:
+      type: number
+    name:
+      type: string     
+createPlacabase:
+  type: object
+  properties:
+    referencia:
+      type: number
+    precio:
+      type: number
+    name:
+      type: string
+    tamano:
+      type: string                                  

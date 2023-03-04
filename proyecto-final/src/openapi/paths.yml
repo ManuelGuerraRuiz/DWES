@@ -128,22 +128,159 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/createOrdenador"
+  "/ordenador/{referencia}":                          
+    put:
+      tags:
+      - Ordenadores
+      summary: 'Editar Ordenador '
+      description: Enviar los datos para Editar un ordenador
+      parameters:
+      - name: referencia
+        in: path
+        description: Pon el nombre de la referencia para Editar
+        required: true
+        schema:
+          type: number
+      requestBody:
+        description: Editar ordenador
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/editOrdenador"
+      responses:
+        201:
+          description: Ordenador editado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/editOrdenador"
+    delete:
+      tags:
+      - Ordenadores
+      summary: 'Borrar Ordenador '
+      description: Enviar los datos para Borrar un Ordenador
+      parameters:
+      - name: referencia
+        in: path
+        description: Pon el nombre de la referencia para borrar
+        required: true
+        schema:
+          type: number
+      responses:
+        201:
+          description: Ordenador borrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/deleteOrdenador"                
   "/factura":
+    get:
+      tags:
+      - Facturas
+      summary: Recoger todas las Facturas
+      description: Recoger todas las Facturas
+      responses:
+        200:
+          description: Lista de Factura
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Factura"
     post:
       tags:
       - Facturas
-      summary: 'Crear Factura '
+      summary: 'Crear Facturas '
       description: Enviar los datos para crear una factura
       requestBody:
         description: Crear factura
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Factura"
+              $ref: "#/components/schemas/createFactura"
       responses:
         201:
           description: Factura creada
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Factura"
+                $ref: "#/components/schemas/createFactura"
+  "/factura/{referencia}":                          
+    put:
+      tags:
+      - Facturas
+      summary: 'Editar Factura '
+      description: Enviar los datos para Editar una factura
+      parameters:
+      - name: referencia
+        in: path
+        description: Pon el nombre de la referencia para Editar
+        required: true
+        schema:
+          type: number
+      requestBody:
+        description: Editar factura
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/editFactura"
+      responses:
+        201:
+          description: Factura editada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/editFactura"
+    delete:
+      tags:
+      - Facturas
+      summary: 'Borrar Factura '
+      description: Enviar los datos para Borrar una Factura
+      parameters:
+      - name: referencia
+        in: path
+        description: Pon el nombre de la referencia para borrar
+        required: true
+        schema:
+          type: number
+      responses:
+        201:
+          description: Factura borrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/deleteOrdenador"
+  "/componente":
+    get:
+      tags:
+      - Componentes
+      summary: Recoger todos los Componentes
+      description: Recoger todos los Componentes
+      responses:
+        200:
+          description: Lista de Componentes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Componentes"  
+    post:
+      tags:
+      - Componentes
+      summary: 'Crear Placa Base'
+      description: Enviar los datos para crear una Placa Base
+      requestBody:
+        description: Crear Placa base
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createPlacabase"
+      responses:
+        201:
+          description: PlacaBase creada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createPlacabase"                                          

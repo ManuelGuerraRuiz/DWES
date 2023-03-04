@@ -5,7 +5,7 @@ const ordenadorSchema = new Schema({
   categoria: { type: String, enum: ['gaming', 'basic', 'profesional'], required: true },
   precio: Number,
   name: String,
-  componentes: [String],
+  componentes: { type: Types.ObjectId, ref: "Componentes" },
 });
 
 module.exports = model("Ordenadores", ordenadorSchema);

@@ -23,9 +23,33 @@ async function createOrdenador(req, res, next) {
     }
   }
 
+  async function editOrdenador(req, res, next) {
+    try {
+      const editedOrdenador = await ordenadorService.editOrdenador(req.body)
+      res.status(200).send(editedOrdenador);
+      logger.info('Ordenador editado');
+    } catch (error) {
+      error.status = 409;
+      next(error);
+    }
+  }
+
+  async function deleteOrdenador(req, res, next) {
+    try {
+      const deletedOrdenador = await ordenadorService.deleteOrdenador(req.params.referencia);
+      res.status(200).send(deletedOrdenador);
+      logger.info('Ordenador eliminado');
+    } catch (error) {
+      error.statusCode = 404;
+      logger.error('Ordenador no encontrado');
+      next(error);
+    }
+  }
 
 
 module.exports = {
     createOrdenador, 
-    getOrdenadores, 
+    getOrdenadores,
+    editOrdenador,
+    deleteOrdenador 
 }; 

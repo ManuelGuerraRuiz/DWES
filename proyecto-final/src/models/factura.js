@@ -1,11 +1,12 @@
-const { Schema,model, Types } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
+const { format } = require("winston");
 
+const facturaSchema = new Schema({
+  referencia: { type: Number, require: true, unique: true },
+  fecha: { type: String, format: Date,},
+  pago: Number,
+  user: { type: Types.ObjectId, ref: "Users" },
+  ordenador: { type: Types.ObjectId, ref: "Ordenadores" },
+});
 
-    const facturaSchema = new Schema({
-       fecha : Number,
-       pago : Number,
-       user: {type: Types.ObjectId, ref:'User'},
-       ordenador: {type: Types.ObjectId, ref: 'Ordenador' }
-      });
-
-module.exports = model('Facturas',facturaSchema);
+module.exports = model("Facturas", facturaSchema);

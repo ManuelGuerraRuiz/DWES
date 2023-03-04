@@ -12,7 +12,7 @@ module.exports = {
   info: {
     version: '0.0.1',
     title: 'CUSTOM-PC',
-    description: 'RESTFull API for editor notes',
+    description: 'Tu Pc a un clic',
     termsOfService: 'http://swagger.io/terms/',
   },
   servers: [{ url: 'http://localhost:3000/' }],
