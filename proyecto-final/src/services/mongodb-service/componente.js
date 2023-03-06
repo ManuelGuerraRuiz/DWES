@@ -42,6 +42,17 @@ function getAllComponentes(filters) {
   return Componente.find(filters);
 }
 
+async function deleteComponente(referencia) {
+  const filter = { referencia: referencia };
+  const deletedComponente = await Componente.deleteOne(filter);
+  if (!deletedComponente) {
+    const error = new Error(`Componente with referencia ${referencia} not found`);
+    error.statusCode = 404;
+    throw error;
+  }
+  return deletedComponente;
+}
+
 module.exports = {
   createPlacaBase,
   createProcesador,
@@ -50,4 +61,5 @@ module.exports = {
   createDiscoDuro,
   createRefrigeracion,
   getAllComponentes,
+  deleteComponente
 };

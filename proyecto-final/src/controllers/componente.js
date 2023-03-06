@@ -74,8 +74,20 @@ async function getComponentes(req, res, next) {
       logger.info('Componentes mostradas');
       return res.status(201).send(componentes);
     } catch (error) {
-      logger.error('Facturas no encontrados');
+      logger.error('Componentes no encontrados');
       return next(error);
+    }
+  }
+
+  async function deleteComponente(req, res, next) {
+    try {
+      const deletedComponente = await componenteService.deleteComponente(req.params.referencia);
+      res.status(200).send(deletedComponente);
+      logger.info('Componente eliminado');
+    } catch (error) {
+      error.statusCode = 404;
+      logger.error('Componente no encontrado');
+      next(error);
     }
   }
 
@@ -87,4 +99,5 @@ async function getComponentes(req, res, next) {
     createGrafica,
     createRefrigeracion,
     getComponentes, 
+    deleteComponente
 }; 

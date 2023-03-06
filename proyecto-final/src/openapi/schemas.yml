@@ -210,3 +210,8 @@ createDiscoDuro:
       type: string
     capacidad:
       type: string              
+deleteComponente:
+  type: object
+  properties:
+    referencia:
+      type: number

@@ -378,5 +378,25 @@
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/createDiscoDuro"                
+                $ref: "#/components/schemas/createDiscoDuro"
+  "/componente/{referencia}":             
+    delete:
+      tags:
+      - Componentes
+      summary: 'Borrar Componente '
+      description: Enviar los datos para Borrar un Componente
+      parameters:
+      - name: referencia
+        in: path
+        description: Pon el nombre de la referencia para borrar
+        required: true
+        schema:
+          type: number
+      responses:
+        201:
+          description: Componente borrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/deleteComponente"                                
 
