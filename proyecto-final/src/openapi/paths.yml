@@ -265,7 +265,8 @@
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Componentes"  
+                  $ref: "#/components/schemas/Componentes"
+  "/componente/placabase":                   
     post:
       tags:
       - Componentes

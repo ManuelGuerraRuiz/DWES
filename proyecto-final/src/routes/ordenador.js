@@ -4,7 +4,7 @@ const { createOrdenador, getOrdenadores, editOrdenador, deleteOrdenador} = requi
 
 const router = express.Router();
 
-router.get('/',getOrdenadores);
+router.get('',getOrdenadores);
 router.post('', createOrdenador);
 router.put('/:referencia', editOrdenador);
 router.delete('/:referencia', deleteOrdenador);

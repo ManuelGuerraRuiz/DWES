@@ -1,7 +1,6 @@
 const express = require('express');
 
 const { rootController } = require('../controllers');
-const { getUsers } = require('../controllers/user');
 const { createMail } = require('../controllers/smtp')
 const userRouter = require('./user');
 const ordenadorRouter = require('./ordenador');
@@ -11,7 +10,6 @@ const componenteRouter = require('./componente');
 const router = express.Router();
 
 router.post('/', rootController);;
-router.get('/user', getUsers);
 router.post('/mail', createMail);
 router.use('/user', userRouter);
 router.use('/ordenador', ordenadorRouter);

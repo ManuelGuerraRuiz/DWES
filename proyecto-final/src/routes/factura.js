@@ -4,7 +4,7 @@ const { createFactura, getFacturas, editFactura, deleteFactura} = require('../co
 
 const router = express.Router();
 
-router.get('/',getFacturas);
+router.get('',getFacturas);
 router.post('', createFactura);
 router.put('/:referencia', editFactura);
 router.delete('/:referencia', deleteFactura);
