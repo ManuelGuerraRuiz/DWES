@@ -1,0 +1,540 @@
+{
+	"info": {
+		"_postman_id": "6198aced-5f60-4dd4-919b-5657d59857fa",
+		"name": "CustomPc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24724467"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "recoger usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"manolito@gmail.com\",\r\n  \"pass\": \"1234\",\r\n  \"name\": \"manuel\",\r\n  \"apellido\": \"guerra\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"manolito@gmail.com\",\r\n  \"pass\": \"1234\",\r\n  \"name\": \"manolito\",\r\n  \"apellido\": \"guerra ruiz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/manolito@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"manolito@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/manolito@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"manolito@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ordenadores",
+			"item": [
+				{
+					"name": "recoger ordenadores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/ordenador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ordenador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear ordenador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"categoria\": \"string\",\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"componentes\": [\r\n    \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ordenador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ordenador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar ordenador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"categoria\": \"string\",\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"componentes\": [\r\n    \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ordenador/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ordenador",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar ordenador",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"categoria\": \"string\",\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"componentes\": [\r\n    \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/ordenador/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ordenador",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "factura",
+			"item": [
+				{
+					"name": "recoger facturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/factura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear factura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"fecha\": \"string\",\r\n  \"pago\": 0,\r\n  \"user\": \"string\",\r\n  \"ordenador\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/factura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar factura",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"fecha\": \"string\",\r\n  \"pago\": 0,\r\n  \"user\": \"string\",\r\n  \"ordenador\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/factura/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factura",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar factura",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/factura/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factura",
+								"22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "componentes",
+			"item": [
+				{
+					"name": "recoger los componentes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/componente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear placa base",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 55,\r\n  \"precio\": 500,\r\n  \"name\": \"Asus corazon\",\r\n  \"tamano\": \"micro-atx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/componente/placabase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente",
+								"placabase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear procesador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"ghz\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/componente/procesador",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente",
+								"procesador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear ram",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"gb\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/componente/ram",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente",
+								"ram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear grafica",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"gb\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/componente/grafica",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente",
+								"grafica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear refrigeracion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"tipo\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/componente/refrigeracion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente",
+								"refrigeracion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear disco duro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"referencia\": 0,\r\n  \"precio\": 0,\r\n  \"name\": \"string\",\r\n  \"capacidad\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/componente/discoduro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente",
+								"discoduro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar componente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/componente/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"componente",
+								"55"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
