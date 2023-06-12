@@ -5,6 +5,13 @@ Email:
       type: string
     text:
       type: string
+login:
+  type: object
+  properties:
+    email:
+      type: string
+    pass:
+      type: string      
 User:
   type: object
   properties:

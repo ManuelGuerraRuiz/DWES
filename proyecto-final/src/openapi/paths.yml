@@ -17,6 +17,25 @@
               application/json:
                 schema:
                   $ref: "#/components/schemas/Email"
+  "/login": 
+    post: 
+      tags:
+      - Login
+      summary: Loguear usuario,
+      description: Se loguea un usuario,
+      requestBody: 
+          description: Escribe email y contraseña,
+          content: 
+            application/json: 
+              schema: 
+                $ref: "#/components/schemas/login"
+      responses:
+          201:
+            description: Usuario Logueado
+            content:
+            application/json:
+                schema:
+                  $ref: "#/components/schemas/login"             
   "/user":
     get:
       tags:
